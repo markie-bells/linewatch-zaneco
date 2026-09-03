@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linewatch Zamboanga</title>
+<meta name="description" content="Unofficial, self-updating mirror of ZANECO's scheduled power-interruption notices for Zamboanga del Norte.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#0c1d30;
+    --surface:#122c47;
+    --surface-raised:#1a3b5c;
+    --ink:#eaf1f8;
+    --ink-dim:#8fa8c2;
+    --border:#28496c;
+    --accent:#e3a23c;
+    --accent-ink:#1a1206;
+    --warn:#e2604f;
+    --warn-ink:#2a0d08;
+    --ok:#4fb6a6;
+    --ok-ink:#04211d;
+    --shadow: 0 1px 0 rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#eef2f6;
+      --surface:#ffffff;
+      --surface-raised:#ffffff;
+      --ink:#122c47;
+      --ink-dim:#4f6883;
+      --border:#d3dee8;
+      --accent:#a86a15;
+      --accent-ink:#fff6e6;
+      --warn:#b23c28;
+      --warn-ink:#fff0ed;
+      --ok:#2b7d6f;
+      --ok-ink:#eafaf6;
+      --shadow: 0 1px 0 rgba(18,44,71,.04), 0 8px 24px -14px rgba(18,44,71,.22);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#eef2f6; --surface:#ffffff; --surface-raised:#ffffff; --ink:#122c47; --ink-dim:#4f6883;
+    --border:#d3dee8; --accent:#a86a15; --accent-ink:#fff6e6; --warn:#b23c28; --warn-ink:#fff0ed;
+    --ok:#2b7d6f; --ok-ink:#eafaf6; --shadow: 0 1px 0 rgba(18,44,71,.04), 0 8px 24px -14px rgba(18,44,71,.22);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0c1d30; --surface:#122c47; --surface-raised:#1a3b5c; --ink:#eaf1f8; --ink-dim:#8fa8c2;
+    --border:#28496c; --accent:#e3a23c; --accent-ink:#1a1206; --warn:#e2604f; --warn-ink:#2a0d08;
+    --ok:#4fb6a6; --ok-ink:#04211d; --shadow: 0 1px 0 rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  html{color-scheme:light dark;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Public Sans', ui-sans-serif, system-ui, sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+  a{ color:var(--accent); }
+  a:focus-visible, button:focus-visible, input:focus-visible, .chip:focus-visible{
+    outline:2px solid var(--accent); outline-offset:2px;
+  }
+  .wrap{ max-width:860px; margin:0 auto; padding:28px 20px 64px; }
+
+  header.top{
+    display:flex; flex-direction:column; gap:6px;
+    padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid var(--border);
+  }
+  .brand-row{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .wordmark{
+    font-family:'Big Shoulders Display', ui-sans-serif, sans-serif; font-weight:800;
+    font-size:clamp(32px, 6vw, 44px); letter-spacing:.01em; text-transform:uppercase;
+    margin:0; line-height:.9;
+  }
+  .wordmark .bolt{ color:var(--accent); }
+  .unofficial-tag{
+    font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:11px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-dim); border:1px solid var(--border);
+    border-radius:999px; padding:3px 9px; white-space:nowrap;
+  }
+  .tagline{ color:var(--ink-dim); font-size:15px; max-width:56ch; margin:2px 0 0; }
+  .tagline b{ color:var(--ink); font-weight:600; }
+
+  .summary{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border);
+    border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:22px;
+  }
+  .stat{ background:var(--surface); padding:14px 16px; }
+  .stat .n{
+    font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:600; font-size:22px;
+    font-variant-numeric:tabular-nums; display:block;
+  }
+  .stat .label{ font-size:12px; color:var(--ink-dim); }
+  .sync-note{
+    font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:11.5px; color:var(--ink-dim);
+    text-align:right; margin-top:6px;
+  }
+
+  .controls{ display:flex; flex-direction:column; gap:10px; margin-bottom:26px; }
+  .search{
+    display:flex; align-items:center; gap:8px; background:var(--surface);
+    border:1px solid var(--border); border-radius:9px; padding:10px 12px;
+  }
+  .search svg{ flex:none; opacity:.55; }
+  .search input{
+    border:0; background:transparent; color:var(--ink); font-size:15px;
+    font-family:inherit; width:100%; outline:none;
+  }
+  .search input::placeholder{ color:var(--ink-dim); }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:12px; letter-spacing:.03em;
+    border:1px solid var(--border); background:var(--surface); color:var(--ink-dim);
+    border-radius:7px; padding:6px 10px; cursor:pointer; user-select:none;
+  }
+  .chip[aria-pressed="true"]{
+    background:var(--accent); border-color:var(--accent); color:var(--accent-ink); font-weight:600;
+  }
+
+  .day-group{ margin-bottom:26px; }
+  .day-heading{
+    display:flex; align-items:baseline; gap:10px; font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:13px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-dim);
+    margin:0 0 10px; padding-bottom:6px; border-bottom:1px dashed var(--border);
+  }
+  .day-heading .rel{ color:var(--accent); font-weight:600; }
+  .cards{ display:flex; flex-direction:column; gap:10px; }
+
+  .card{
+    display:grid; grid-template-columns:64px 1fr; gap:0; background:var(--surface);
+    border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:var(--shadow);
+  }
+  .datecell{
+    background:var(--surface-raised); border-right:1px solid var(--border);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:10px 4px; text-align:center;
+  }
+  .datecell .mon{
+    font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:11px; letter-spacing:.08em;
+    color:var(--ink-dim); text-transform:uppercase;
+  }
+  .datecell .day{
+    font-family:'Big Shoulders Display', ui-sans-serif, sans-serif; font-weight:800; font-size:30px;
+    line-height:1; color:var(--accent);
+  }
+  .card.emergency .datecell .day{ color:var(--warn); }
+
+  .body{ padding:12px 14px 13px; min-width:0; }
+  .row1{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
+  .badge{
+    font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:11px; font-weight:600;
+    letter-spacing:.04em; border-radius:5px; padding:2px 7px; background:var(--surface-raised);
+    color:var(--ink-dim); border:1px solid var(--border);
+  }
+  .badge.emergency{ background:var(--warn); border-color:var(--warn); color:var(--warn-ink); }
+  .time{
+    font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric:tabular-nums;
+    font-size:13.5px; font-weight:500;
+  }
+  .duration{ color:var(--ink-dim); font-size:12.5px; }
+  .status-pill{
+    margin-left:auto; font-size:11px; letter-spacing:.03em; border-radius:999px; padding:3px 9px;
+    display:inline-flex; align-items:center; gap:5px; white-space:nowrap;
+  }
+  .status-pill.detailed{ background:var(--ok); color:var(--ok-ink); }
+  .status-pill.pending{ background:var(--surface-raised); color:var(--ink-dim); border:1px solid var(--border); }
+  .status-pill .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+  .place{ font-weight:600; font-size:14.5px; margin:2px 0 3px; }
+  .place .brgy{ color:var(--ink-dim); font-weight:400; }
+  .reason{ color:var(--ink-dim); font-size:13.5px; margin:0 0 8px; max-width:62ch; }
+  .card-foot{ display:flex; align-items:center; gap:10px; font-size:12px; }
+  .card-foot a{ text-decoration:none; }
+  .card-foot a:hover{ text-decoration:underline; }
+
+  .pending-note{ font-size:13px; color:var(--ink-dim); padding:11px 14px; }
+  .empty{ text-align:center; padding:48px 20px; color:var(--ink-dim); }
+  .empty .big{ font-family:'Big Shoulders Display', sans-serif; font-weight:700; font-size:22px; color:var(--ink); display:block; margin-bottom:6px; }
+
+  footer{
+    margin-top:40px; padding-top:18px; border-top:1px solid var(--border); font-size:12.5px;
+    color:var(--ink-dim); display:flex; flex-direction:column; gap:6px;
+  }
+  footer a{ color:var(--ink-dim); }
+  footer .legal{ max-width:70ch; }
+
+  @media (prefers-reduced-motion:no-preference){
+    .card{ animation:rise .35s ease both; }
+    @keyframes rise{ from{ opacity:0; transform:translateY(4px);} to{ opacity:1; transform:none;} }
+  }
+  @media (prefers-reduced-motion:reduce){ .card{ animation:none; } }
+  @media (max-width:480px){
+    .summary{ grid-template-columns:1fr 1fr; }
+    .summary .stat:last-child{ grid-column:1 / -1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand-row">
+      <h1 class="wordmark">Line<span class="bolt">watch</span></h1>
+      <span class="unofficial-tag">Unofficial · not affiliated with ZANECO</span>
+    </div>
+    <p class="tagline">Mirrors <b>ZANECO's</b> published notices for Zamboanga del Norte — Dipolog, Polanco, Roxas, Sindangan and the rest of the DAS / SAS / LAS / PAS service areas. Search your town below.</p>
+  </header>
+
+  <div class="summary">
+    <div class="stat"><span class="n" id="statUpcoming">–</span><span class="label">upcoming interruptions</span></div>
+    <div class="stat"><span class="n" id="statTowns">–</span><span class="label">towns/areas listed</span></div>
+    <div class="stat"><span class="n" id="statPending">–</span><span class="label">awaiting detail</span></div>
+  </div>
+
+  <div class="controls">
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.2" stroke="currentColor" stroke-width="1.4"/><path d="M11 11L14.2 14.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <input id="searchBox" type="text" placeholder="Search your town or barangay — e.g. “Polanco” or “Lugdungan”" aria-label="Search by town or barangay">
+    </div>
+    <div class="chips" id="areaChips" role="group" aria-label="Filter by ZANECO area system"></div>
+  </div>
+
+  <div id="list"><div class="empty"><span class="big">Loading notices…</span></div></div>
+  <div class="sync-note" id="syncNote">checking last sync…</div>
+
+  <footer>
+    <div>Source: <a href="https://zaneco.ph/category/power-interruption-update/" target="_blank" rel="noopener">zaneco.ph — Power Interruption Updates</a>. Times, causes and affected areas are copied from ZANECO's own notices as published.</div>
+    <div class="legal">Linewatch is an independent, unofficial mirror — not run by or affiliated with Zamboanga del Norte Electric Cooperative, Inc. Schedules get moved, shortened, or cancelled; confirm with ZANECO (Gen. Luna St., Central Barangay, Dipolog City · 0920‑629‑0163 / 0955‑884‑8240) before planning around a listed interruption. Data on this page is refreshed automatically roughly every 6 hours by a GitHub Actions workflow that reads ZANECO's own notice images.</div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var AREA_LABELS = { DAS:"DAS", SAS:"SAS", LAS:"LAS", PAS:"PAS", NGCP:"NGCP" };
+  var state = { notices: [], search: "", areas: new Set() };
+
+  var listEl = document.getElementById('list');
+  var chipsEl = document.getElementById('areaChips');
+  var searchEl = document.getElementById('searchBox');
+  var syncEl = document.getElementById('syncNote');
+
+  searchEl.addEventListener('input', function(){ state.search = searchEl.value.trim().toLowerCase(); render(); });
+
+  function toggleArea(code, btn){
+    if(state.areas.has(code)){ state.areas.delete(code); btn.setAttribute('aria-pressed','false'); }
+    else{ state.areas.add(code); btn.setAttribute('aria-pressed','true'); }
+    render();
+  }
+  function buildChips(){
+    chipsEl.innerHTML = '';
+    Object.keys(AREA_LABELS).forEach(function(code){
+      var b = document.createElement('button');
+      b.className = 'chip'; b.type = 'button'; b.setAttribute('aria-pressed','false'); b.textContent = code;
+      b.addEventListener('click', function(){ toggleArea(code, b); });
+      chipsEl.appendChild(b);
+    });
+  }
+  buildChips();
+
+  function fmtRelDay(dateStr){
+    var today = new Date(); today.setHours(0,0,0,0);
+    var d = new Date(dateStr + 'T00:00:00');
+    var diff = Math.round((d - today) / 86400000);
+    if(diff === 0) return 'Today';
+    if(diff === 1) return 'Tomorrow';
+    if(diff === -1) return 'Yesterday';
+    if(diff > 1 && diff < 7) return 'In ' + diff + ' days';
+    if(diff < -1 && diff > -7) return diff*-1 + ' days ago';
+    return null;
+  }
+  function fmtDay(dateStr){
+    var d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString(undefined, { weekday:'short', month:'short', day:'numeric' });
+  }
+  function fmtMon(dateStr){
+    var d = new Date(dateStr + 'T00:00:00');
+    return { mon: d.toLocaleDateString(undefined,{month:'short'}), day: d.getDate() };
+  }
+  function fmtSync(iso){
+    if(!iso) return 'not yet checked';
+    var d = new Date(iso);
+    var mins = Math.round((Date.now() - d.getTime())/60000);
+    if(mins < 1) return 'moments ago';
+    if(mins < 60) return mins + ' min ago';
+    var hrs = Math.round(mins/60);
+    if(hrs < 24) return hrs + ' hr' + (hrs===1?'':'s') + ' ago';
+    var days = Math.round(hrs/24);
+    return days + ' day' + (days===1?'':'s') + ' ago';
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function flatten(notices){
+    var out = [];
+    notices.forEach(function(n){
+      if(n.status === 'pending_detail' || !n.entries || !n.entries.length){
+        out.push({ pending:true, doc:n, date: n.leadDate || null });
+        return;
+      }
+      n.entries.forEach(function(e){ out.push({ pending:false, doc:n, entry:e, date:e.date }); });
+    });
+    return out;
+  }
+  function matches(item){
+    var q = state.search;
+    var okSearch = true;
+    if(q){
+      var hay = [];
+      if(item.pending){ hay.push(item.doc.title || ''); }
+      else { hay.push(item.entry.municipality || '', (item.entry.areas||[]).join(' '), item.doc.title || ''); }
+      okSearch = hay.join(' ').toLowerCase().indexOf(q) !== -1;
+    }
+    var okArea = state.areas.size === 0 || state.areas.has(item.doc.areaSystem);
+    return okSearch && okArea;
+  }
+
+  function render(){
+    var items = flatten(state.notices).filter(matches);
+    var all = flatten(state.notices);
+    var todayStr = new Date().toISOString().slice(0,10);
+    var upcoming = all.filter(function(i){ return !i.pending && i.date >= todayStr; }).length;
+    var towns = new Set();
+    all.forEach(function(i){ if(!i.pending) towns.add(i.entry.municipality); });
+    var pendingCount = all.filter(function(i){ return i.pending; }).length;
+    document.getElementById('statUpcoming').textContent = upcoming;
+    document.getElementById('statTowns').textContent = towns.size;
+    document.getElementById('statPending').textContent = pendingCount;
+
+    if(!state.notices.length){
+      listEl.innerHTML = '<div class="empty"><span class="big">No notices loaded</span>data/notices.json may still be syncing.</div>';
+      return;
+    }
+    if(!items.length){
+      listEl.innerHTML = '<div class="empty"><span class="big">No match</span>Nothing found for that search or filter — try a nearby town, or clear the area filters above.</div>';
+      return;
+    }
+
+    var dated = items.filter(function(i){ return i.date; }).sort(function(a,b){ return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    var undated = items.filter(function(i){ return !i.date; });
+    var groups = [], byDate = {};
+    dated.forEach(function(i){
+      if(!byDate[i.date]){ byDate[i.date] = []; groups.push(i.date); }
+      byDate[i.date].push(i);
+    });
+
+    var html = '';
+    groups.forEach(function(dateStr){
+      var rel = fmtRelDay(dateStr);
+      html += '<section class="day-group"><h2 class="day-heading">' + fmtDay(dateStr) + (rel ? ' <span class="rel">' + rel + '</span>' : '') + '</h2><div class="cards">';
+      byDate[dateStr].forEach(function(i){ html += cardHtml(i); });
+      html += '</div></section>';
+    });
+    if(undated.length){
+      html += '<section class="day-group"><h2 class="day-heading">New — date pending confirmation</h2><div class="cards">';
+      undated.forEach(function(i){ html += cardHtml(i); });
+      html += '</div></section>';
+    }
+    listEl.innerHTML = html;
+  }
+
+  function cardHtml(i){
+    var doc = i.doc;
+    if(i.pending){
+      var dm = i.date ? fmtMon(i.date) : { mon:'—', day:'?' };
+      return '' +
+        '<article class="card">' +
+          '<div class="datecell"><span class="mon">' + dm.mon + '</span><span class="day">' + dm.day + '</span></div>' +
+          '<div class="body">' +
+            '<div class="row1"><span class="badge">' + escapeHtml(doc.areaSystem||'—') + '</span><span class="status-pill pending"><span class="dot"></span>New — pending detail</span></div>' +
+            '<div class="pending-note">' + escapeHtml(doc.title) + ' — the sync workflow hasn\'t read this one\'s detail image yet. <a href="' + doc.sourceUrl + '" target="_blank" rel="noopener">View the original notice →</a></div>' +
+          '</div>' +
+        '</article>';
+    }
+    var e = i.entry;
+    var dm = fmtMon(e.date);
+    var emergency = !!e.emergency;
+    var areasStr = (e.areas||[]).join(', ');
+    return '' +
+      '<article class="card' + (emergency?' emergency':'') + '">' +
+        '<div class="datecell"><span class="mon">' + dm.mon + '</span><span class="day">' + dm.day + '</span></div>' +
+        '<div class="body">' +
+          '<div class="row1">' +
+            '<span class="badge' + (emergency?' emergency':'') + '">' + (emergency?'EMERGENCY · ':'') + escapeHtml(doc.areaSystem||'—') + '</span>' +
+            '<span class="time">' + escapeHtml(e.timeStart) + '–' + escapeHtml(e.timeEnd) + '</span>' +
+            '<span class="duration">(' + escapeHtml(e.duration) + ')</span>' +
+            '<span class="status-pill detailed"><span class="dot"></span>Confirmed detail</span>' +
+          '</div>' +
+          '<div class="place"><span class="muni">' + escapeHtml(e.municipality) + '</span>' + (areasStr ? ' — <span class="brgy">' + escapeHtml(areasStr) + '</span>' : '') + '</div>' +
+          '<p class="reason">' + escapeHtml(e.reason) + '</p>' +
+          '<div class="card-foot"><a href="' + doc.sourceUrl + '" target="_blank" rel="noopener">Source notice ↗</a></div>' +
+        '</div>' +
+      '</article>';
+  }
+
+  render();
+
+  fetch('data/notices.json', { cache: 'no-store' })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      state.notices = data.notices || [];
+      syncEl.textContent = data.lastCheckedAt ? ('zaneco.ph last checked ' + fmtSync(data.lastCheckedAt)) : 'not yet synced';
+      render();
+    })
+    .catch(function(){
+      syncEl.textContent = 'could not load data/notices.json';
+    });
+})();
+</script>
+</body>
+</html>

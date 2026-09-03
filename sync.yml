@@ -1,0 +1,43 @@
+name: Sync ZANECO notices
+
+on:
+  schedule:
+    # Every 6 hours. GitHub Actions cron is UTC.
+    - cron: "15 */6 * * *"
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write   # needed so the workflow can commit the updated data file
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Tesseract OCR
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr
+
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run sync
+        run: python scripts/sync.py
+
+      - name: Commit updated data (if changed)
+        run: |
+          git config user.name "linewatch-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/notices.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Sync ZANECO notices [automated]"
+            git push
+          fi

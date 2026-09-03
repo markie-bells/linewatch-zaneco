@@ -1,0 +1,91 @@
+{
+  "lastCheckedAt": "2026-09-03T12:31:38Z",
+  "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
+  "notices": [
+    {
+      "id": "pas-2026-09-07-11",
+      "areaSystem": "PAS",
+      "title": "Notice of Schedule Power Interruption PAS – September 7, 8, 9, 10 & 11 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/03/notice-of-schedule-power-interruption-pas-september-7-8-9-10-11-2026/",
+      "status": "detailed",
+      "entries": [
+        { "date": "2026-09-07", "timeStart": "1:00 PM", "timeEnd": "5:00 PM", "duration": "4 hrs", "municipality": "Polanco", "areas": ["Back of Polanco Central School", "PLDT Tower"], "reason": "Installation of additional pole provides added structural support, improves line stability and safety, and helps maintain reliable power distribution by reducing pole stress and preventing sagging or leaning." },
+        { "date": "2026-09-08", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Polanco", "areas": ["Brgy. Pian"], "reason": "Re-clearing of vegetation to improve access, and ensure safe, reliable operations." },
+        { "date": "2026-09-09", "timeStart": "9:00 AM", "timeEnd": "5:00 PM", "duration": "8 hrs", "municipality": "Dipolog", "areas": ["Brgy. Lugdungan"], "reason": "Installation of conductor for new 3-phase distribution line ensures efficient and balanced power distribution, improves system capacity and reliability, and provides a stable supply of electricity to meet growing load demand." },
+        { "date": "2026-09-10", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Polanco", "areas": ["Purok Sampaguita West, Pian"], "reason": "Re-clearing of vegetation to improve access, and ensure safe, reliable operations." },
+        { "date": "2026-09-11", "timeStart": "9:00 AM", "timeEnd": "5:00 PM", "duration": "8 hrs", "municipality": "Dipolog", "areas": ["Brgy. Lugdungan"], "reason": "Final clearing for new constructed three-phase distribution line ensures proper line clearance, prevents vegetation-related faults, improves safety, and promotes reliable, uninterrupted power distribution." }
+      ]
+    },
+    {
+      "id": "das-2026-09-03-emergency",
+      "areaSystem": "DAS",
+      "title": "Notice of Emergency Schedule Power Interruption DAS – September 3, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/02/notice-of-emergency-schedule-power-interruption-das-september-3-2026/",
+      "altSourceUrl": "https://zaneco.ph/2026/09/02/notice-of-scheduled-power-interruption-das-september-3-2026/",
+      "status": "detailed",
+      "entries": [
+        { "date": "2026-09-03", "timeStart": "8:00 AM", "timeEnd": "5:00 PM", "duration": "9 hrs", "municipality": "Roxas", "areas": ["Tantingon"], "reason": "Transfer of pole affected by road widening and fix of leaning pole — ensures safety, proper pole alignment, and reliable power supply while maintaining road clearance.", "emergency": true }
+      ]
+    },
+    {
+      "id": "sas-2026-09-03-09",
+      "areaSystem": "SAS",
+      "title": "Notice of Scheduled Power Interruption SAS – September 3, 4, 5, 7, 8 & 9, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/02/notice-of-scheduled-power-interruption-sas-september-3-4-5-7-8-9-2026/",
+      "status": "detailed",
+      "entries": [
+        { "date": "2026-09-03", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Sindangan", "areas": ["Brgy. Dagohoy to Brgy. Titik"], "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution." },
+        { "date": "2026-09-04", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Siayan", "areas": ["Hillside to Brgy. Dumpilas Siayan"], "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution." },
+        { "date": "2026-09-05", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Sindangan", "areas": ["Sitio Pangi Mandih to Sitio Dicoyong Diot"], "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution." },
+        { "date": "2026-09-07", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Sindangan", "areas": ["Horshoe to portion of Brgy. Bitoon"], "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution." },
+        { "date": "2026-09-08", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Siayan", "areas": ["Calacas to Brgy. Mangilay"], "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution." },
+        { "date": "2026-09-09", "timeStart": "8:30 AM", "timeEnd": "5:00 PM", "duration": "8.5 hrs", "municipality": "Leon B. Postigo", "areas": ["Brgy. Tiniguiban"], "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution." }
+      ]
+    },
+    {
+      "id": "das-2026-09-04-05-08",
+      "areaSystem": "DAS",
+      "title": "Notice of Scheduled Power Interruption DAS – September 4, 5 & 8, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/02/notice-of-scheduled-power-interruption-das-september-4-5-8-2026/",
+      "status": "detailed",
+      "entries": [
+        { "date": "2026-09-04", "timeStart": "8:30 AM", "timeEnd": "4:00 PM", "duration": "7.5 hrs", "municipality": "Manukan", "areas": ["Sitio Piangon, Punta Blanca"], "reason": "Change of rotten pole — ensures safety, prevents outages, and maintains a reliable power supply." },
+        { "date": "2026-09-04", "timeStart": "9:00 AM", "timeEnd": "4:00 PM", "duration": "7 hrs", "municipality": "Dapitan", "areas": ["Oro Elementary School"], "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations." },
+        { "date": "2026-09-05", "timeStart": "8:30 AM", "timeEnd": "4:00 PM", "duration": "7.5 hrs", "municipality": "Roxas", "areas": ["Brgy. Moliton"], "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations." },
+        { "date": "2026-09-08", "timeStart": "8:30 AM", "timeEnd": "3:00 PM", "duration": "6.5 hrs", "municipality": "Dipolog", "areas": ["Portion of Lower Dicayas, Rufina Heights, 3003 steps Linabo Peak and Balintawak Lugdungan"], "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations." }
+      ]
+    },
+    {
+      "id": "las-2026-09-03-04",
+      "areaSystem": "LAS",
+      "title": "Notice of Scheduled Power Interruption LAS – September 2, 3 & 4, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/01/notice-of-scheduled-power-interruption-las-september-2-3-4-2026/",
+      "status": "detailed",
+      "entries": [
+        { "date": "2026-09-03", "timeStart": "8:00 AM", "timeEnd": "5:00 PM", "duration": "9 hrs", "municipality": "Kalawit", "areas": ["Daniel Maeng"], "reason": "Re-clearing of the overhead line and installation of additional cut/out assembly — improves safety, prevents power interruptions, and allows faster isolation of faults for a more reliable power supply." },
+        { "date": "2026-09-04", "timeStart": "8:00 AM", "timeEnd": "5:00 PM", "duration": "9 hrs", "municipality": "Labason", "areas": ["Purok 10, Brgy. Osukan"], "reason": "Re-conductoring improves power capacity, reduces losses, prevents outages, and ensures a more reliable power supply." }
+      ]
+    },
+    {
+      "id": "pas-2026-09-03-04",
+      "areaSystem": "PAS",
+      "title": "Notice of Scheduled Power Interruption PAS – September 3 & 4, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/01/notice-of-scheduled-power-interruption-pas-september-3-4-2026/",
+      "status": "detailed",
+      "entries": [
+        { "date": "2026-09-03", "timeStart": "9:00 AM", "timeEnd": "5:00 PM", "duration": "8 hrs", "municipality": "La Libertad", "areas": ["Brgy. Mercedes"], "reason": "Clearing of vegetation / cutting of trees helps ensure safety, improve accessibility, and maintain a clean, usable area." },
+        { "date": "2026-09-04", "timeStart": "9:00 AM", "timeEnd": "5:00 PM", "duration": "8 hrs", "municipality": "Dapitan", "areas": ["Sitio Simay, Brgy. Masidlakon"], "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations." }
+      ]
+    },
+    {
+      "id": "ngcp-2026-09-05",
+      "areaSystem": "NGCP",
+      "title": "Notice of Scheduled Power Interruption NGCP – September 5, 2026 (Ipil–Salug 69kV line, annual maintenance)",
+      "sourceUrl": "https://zaneco.ph/2026/08/31/notice-of-scheduled-power-interruption-ngcp-september-5-2026/",
+      "status": "detailed",
+      "entries": [
+        { "date": "2026-09-05", "timeStart": "8:00 AM", "timeEnd": "5:00 PM", "duration": "9 hrs", "municipality": "Salug / Labason substations", "areas": ["Salug SS (M2)", "Comunal SS (M5)", "Labason SS (M9)"], "reason": "NGCP line maintenance along the Ipil–Salug 69kV line section, part of NGCP's Annual Maintenance Schedule for CY2026 (advisory NOSPI-D1MOM-CCMS-2026-09-001)." }
+      ]
+    }
+  ]
+}
