@@ -1,4 +1,0 @@
-requests>=2.31
-beautifulsoup4>=4.12
-pytesseract>=0.3.10
-Pillow>=10.0
