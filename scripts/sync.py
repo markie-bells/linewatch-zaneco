@@ -226,4 +226,104 @@ def main():
     try:
         posts = fetch_category_posts()
     except Exception as exc:
-        print(f"Could not fetch category page:
+        print(f"Could not fetch category page: {exc}", file=sys.stderr)
+        data["lastCheckedAt"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+        save_data(data)
+        return
+
+    new_posts = [p for p in posts if p["url"] not in existing_urls]
+
+    # de-duplicate new posts whose card image is byte-identical to another
+    # new post (ZANECO sometimes republishes the same notice under a second title)
+    seen_hashes = {}
+    for post in new_posts:
+        try:
+            imgs = fetch_post_images(post["url"])
+        except Exception as exc:
+            print(f"Skipping (couldn't load page) {post['url']}: {exc}", file=sys.stderr)
+            continue
+        if not imgs:
+            post["_images"] = []
+            continue
+        try:
+            h = image_hash(imgs[0])
+        except Exception:
+            h = None
+        if h and h in seen_hashes:
+            seen_hashes[h]["altSourceUrl"] = post["url"]
+            post["_duplicate_of"] = seen_hashes[h]
+            continue
+        post["_images"] = imgs
+        if h:
+            seen_hashes[h] = post
+
+    added = 0
+    for post in new_posts:
+        if post.get("_duplicate_of") is not None:
+            continue
+        area_system = guess_area_system(post["title"])
+        entries = []
+        for img_url in post.get("_images", []):
+            try:
+                text = ocr_image(img_url)
+            except Exception as exc:
+                print(f"OCR failed for {img_url}: {exc}", file=sys.stderr)
+                continue
+            entry = parse_card_text(text, now.year)
+            if entry:
+                entries.append(entry)
+
+        doc = {
+            "areaSystem": area_system,
+            "title": post["title"],
+            "sourceUrl": post["url"],
+        }
+        if post.get("altSourceUrl"):
+            doc["altSourceUrl"] = post["altSourceUrl"]
+
+        if entries:
+            doc["status"] = "detailed"
+            doc["entries"] = entries
+            doc["id"] = slugify_id(area_system, entries, None)
+        else:
+            doc["status"] = "pending_detail"
+            doc["leadDate"] = earliest_date_from_title(post["title"], now.year)
+            doc["id"] = slugify_id(area_system, [], doc["leadDate"])
+
+        # avoid id collisions
+        existing_ids = {n["id"] for n in data["notices"]}
+        base_id = doc["id"]
+        i = 2
+        while doc["id"] in existing_ids:
+            doc["id"] = f"{base_id}-{i}"
+            i += 1
+
+        data["notices"].append(doc)
+        added += 1
+        print(f"Added: {doc['id']} ({doc['status']}, {len(entries)} entries)")
+
+    # housekeeping: prune notices whose every date is more than STALE_DAYS in the past
+    today = now.date()
+    cutoff = today - timedelta(days=STALE_DAYS)
+    kept = []
+    pruned = 0
+    for n in data["notices"]:
+        dates = []
+        if n.get("entries"):
+            dates = [datetime.strptime(e["date"], "%Y-%m-%d").date() for e in n["entries"]]
+        elif n.get("leadDate"):
+            dates = [datetime.strptime(n["leadDate"], "%Y-%m-%d").date()]
+        if dates and max(dates) < cutoff:
+            pruned += 1
+            continue
+        kept.append(n)
+    data["notices"] = kept
+
+    data["lastCheckedAt"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    data["sourceUrl"] = CATEGORY_URL
+    save_data(data)
+    print(f"Done. {added} added, {pruned} pruned, {len(data['notices'])} total notices.")
+
+
+if __name__ == "__main__":
+    main()
