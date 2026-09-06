@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-09-06T12:27:15Z",
+  "lastCheckedAt": "2026-09-06T15:22:41Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -302,6 +302,22 @@
       "status": "pending_detail",
       "leadDate": "2026-09-10",
       "id": "sas-2026-09-10"
+    },
+    {
+      "areaSystem": "DAS",
+      "title": "Notice of Emergency Schedule Power Interruption DAS – September 7 & 9, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/06/notice-of-emergency-schedule-power-interruption-das-september-7-9-2026/",
+      "status": "pending_detail",
+      "leadDate": "2026-09-07",
+      "id": "das-2026-09-07"
+    },
+    {
+      "areaSystem": "PAS",
+      "title": "Notice of Emergency Schedule Power Interruption PAS – September 9, 10 & 11, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/09/06/notice-of-emergency-schedule-power-interruption-pas-september-9-10-11-2026/",
+      "status": "pending_detail",
+      "leadDate": "2026-09-09",
+      "id": "pas-2026-09-09"
     }
   ]
 }
