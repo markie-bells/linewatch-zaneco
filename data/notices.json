@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-09-05T21:21:11Z",
+  "lastCheckedAt": "2026-09-06T00:35:43Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -64,28 +64,6 @@
             "Brgy. Lugdungan"
           ],
           "reason": "Final clearing for new constructed three-phase distribution line ensures proper line clearance, prevents vegetation-related faults, improves safety, and promotes reliable, uninterrupted power distribution."
-        }
-      ]
-    },
-    {
-      "id": "das-2026-09-03-emergency",
-      "areaSystem": "DAS",
-      "title": "Notice of Emergency Schedule Power Interruption DAS – September 3, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/02/notice-of-emergency-schedule-power-interruption-das-september-3-2026/",
-      "altSourceUrl": "https://zaneco.ph/2026/09/02/notice-of-scheduled-power-interruption-das-september-3-2026/",
-      "status": "detailed",
-      "entries": [
-        {
-          "date": "2026-09-03",
-          "timeStart": "8:00 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "9 hrs",
-          "municipality": "Roxas",
-          "areas": [
-            "Tantingon"
-          ],
-          "reason": "Transfer of pole affected by road widening and fix of leaning pole — ensures safety, proper pole alignment, and reliable power supply while maintaining road clearance.",
-          "emergency": true
         }
       ]
     },
