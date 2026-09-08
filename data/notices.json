@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-09-07T21:23:45Z",
+  "lastCheckedAt": "2026-09-08T00:35:10Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -194,36 +194,6 @@
           "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations."
         }
       ]
-    },
-    {
-      "id": "ngcp-2026-09-05",
-      "areaSystem": "NGCP",
-      "title": "Notice of Scheduled Power Interruption NGCP – September 5, 2026 (Ipil–Salug 69kV line, annual maintenance)",
-      "sourceUrl": "https://zaneco.ph/2026/08/31/notice-of-scheduled-power-interruption-ngcp-september-5-2026/",
-      "status": "detailed",
-      "entries": [
-        {
-          "date": "2026-09-05",
-          "timeStart": "8:00 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "9 hrs",
-          "municipality": "Salug / Labason substations",
-          "areas": [
-            "Salug SS (M2)",
-            "Comunal SS (M5)",
-            "Labason SS (M9)"
-          ],
-          "reason": "NGCP line maintenance along the Ipil–Salug 69kV line section, part of NGCP's Annual Maintenance Schedule for CY2026 (advisory NOSPI-D1MOM-CCMS-2026-09-001)."
-        }
-      ]
-    },
-    {
-      "areaSystem": "DAS",
-      "title": "Notice of Emergency Schedule Power Interruption DAS – September 5, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/04/notice-of-emergency-schedule-power-interruption-das-september-5-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-05",
-      "id": "das-2026-09-05"
     },
     {
       "areaSystem": "LAS",
