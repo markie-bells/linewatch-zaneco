@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-09-08T21:22:36Z",
+  "lastCheckedAt": "2026-09-09T00:35:01Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -194,14 +194,6 @@
           "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations."
         }
       ]
-    },
-    {
-      "areaSystem": "LAS",
-      "title": "Notice of Scheduled Power Interruption LAS – September 6, 8 10 & 11, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/04/notice-of-scheduled-power-interruption-las-september-6-8-10-11-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-06",
-      "id": "las-2026-09-06"
     },
     {
       "areaSystem": "SAS",
