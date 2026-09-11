@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-09-10T21:21:37Z",
+  "lastCheckedAt": "2026-09-11T00:31:20Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -139,59 +139,6 @@
             "Brgy. Tiniguiban"
           ],
           "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution."
-        }
-      ]
-    },
-    {
-      "id": "das-2026-09-04-05-08",
-      "areaSystem": "DAS",
-      "title": "Notice of Scheduled Power Interruption DAS – September 4, 5 & 8, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/02/notice-of-scheduled-power-interruption-das-september-4-5-8-2026/",
-      "status": "detailed",
-      "entries": [
-        {
-          "date": "2026-09-04",
-          "timeStart": "8:30 AM",
-          "timeEnd": "4:00 PM",
-          "duration": "7.5 hrs",
-          "municipality": "Manukan",
-          "areas": [
-            "Sitio Piangon, Punta Blanca"
-          ],
-          "reason": "Change of rotten pole — ensures safety, prevents outages, and maintains a reliable power supply."
-        },
-        {
-          "date": "2026-09-04",
-          "timeStart": "9:00 AM",
-          "timeEnd": "4:00 PM",
-          "duration": "7 hrs",
-          "municipality": "Dapitan",
-          "areas": [
-            "Oro Elementary School"
-          ],
-          "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations."
-        },
-        {
-          "date": "2026-09-05",
-          "timeStart": "8:30 AM",
-          "timeEnd": "4:00 PM",
-          "duration": "7.5 hrs",
-          "municipality": "Roxas",
-          "areas": [
-            "Brgy. Moliton"
-          ],
-          "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations."
-        },
-        {
-          "date": "2026-09-08",
-          "timeStart": "8:30 AM",
-          "timeEnd": "3:00 PM",
-          "duration": "6.5 hrs",
-          "municipality": "Dipolog",
-          "areas": [
-            "Portion of Lower Dicayas, Rufina Heights, 3003 steps Linabo Peak and Balintawak Lugdungan"
-          ],
-          "reason": "Clearing of vegetation to improve access, and ensure safe, reliable operations."
         }
       ]
     },
