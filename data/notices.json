@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-09-11T21:22:21Z",
+  "lastCheckedAt": "2026-09-12T00:30:02Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -68,95 +68,12 @@
       ]
     },
     {
-      "id": "sas-2026-09-03-09",
-      "areaSystem": "SAS",
-      "title": "Notice of Scheduled Power Interruption SAS – September 3, 4, 5, 7, 8 & 9, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/02/notice-of-scheduled-power-interruption-sas-september-3-4-5-7-8-9-2026/",
-      "status": "detailed",
-      "entries": [
-        {
-          "date": "2026-09-03",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Sindangan",
-          "areas": [
-            "Brgy. Dagohoy to Brgy. Titik"
-          ],
-          "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution."
-        },
-        {
-          "date": "2026-09-04",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Siayan",
-          "areas": [
-            "Hillside to Brgy. Dumpilas Siayan"
-          ],
-          "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution."
-        },
-        {
-          "date": "2026-09-05",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Sindangan",
-          "areas": [
-            "Sitio Pangi Mandih to Sitio Dicoyong Diot"
-          ],
-          "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution."
-        },
-        {
-          "date": "2026-09-07",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Sindangan",
-          "areas": [
-            "Horshoe to portion of Brgy. Bitoon"
-          ],
-          "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution."
-        },
-        {
-          "date": "2026-09-08",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Siayan",
-          "areas": [
-            "Calacas to Brgy. Mangilay"
-          ],
-          "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution."
-        },
-        {
-          "date": "2026-09-09",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Leon B. Postigo",
-          "areas": [
-            "Brgy. Tiniguiban"
-          ],
-          "reason": "Re-clearing of distribution line ensures safety, prevents outages, and maintains reliable power distribution."
-        }
-      ]
-    },
-    {
       "areaSystem": "SAS",
       "title": "Notice of Scheduled Power Interruption SAS – September 10,11 & 12, 2026",
       "sourceUrl": "https://zaneco.ph/2026/09/04/notice-of-scheduled-power-interruption-sas-september-1011-12-2026/",
       "status": "pending_detail",
       "leadDate": "2026-09-10",
       "id": "sas-2026-09-10"
-    },
-    {
-      "areaSystem": "PAS",
-      "title": "Notice of Emergency Schedule Power Interruption PAS – September 9, 10 & 11, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/06/notice-of-emergency-schedule-power-interruption-pas-september-9-10-11-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-09",
-      "id": "pas-2026-09-09"
     },
     {
       "areaSystem": "LAS",
@@ -173,14 +90,6 @@
       "status": "pending_detail",
       "leadDate": "2026-09-10",
       "id": "das-2026-09-10"
-    },
-    {
-      "areaSystem": "DAS",
-      "title": "Notice of Scheduled Power Interruption DAS – September 9, 10 & 11, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/07/notice-of-scheduled-power-interruption-das-september-9-10-11-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-09",
-      "id": "das-2026-09-09"
     },
     {
       "areaSystem": "DAS",
