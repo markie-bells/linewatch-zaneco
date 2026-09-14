@@ -1,72 +1,7 @@
 {
-  "lastCheckedAt": "2026-09-13T21:22:27Z",
+  "lastCheckedAt": "2026-09-14T00:32:01Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
-    {
-      "id": "pas-2026-09-07-11",
-      "areaSystem": "PAS",
-      "title": "Notice of Schedule Power Interruption PAS – September 7, 8, 9, 10 & 11 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/03/notice-of-schedule-power-interruption-pas-september-7-8-9-10-11-2026/",
-      "status": "detailed",
-      "entries": [
-        {
-          "date": "2026-09-07",
-          "timeStart": "1:00 PM",
-          "timeEnd": "5:00 PM",
-          "duration": "4 hrs",
-          "municipality": "Polanco",
-          "areas": [
-            "Back of Polanco Central School",
-            "PLDT Tower"
-          ],
-          "reason": "Installation of additional pole provides added structural support, improves line stability and safety, and helps maintain reliable power distribution by reducing pole stress and preventing sagging or leaning."
-        },
-        {
-          "date": "2026-09-08",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Polanco",
-          "areas": [
-            "Brgy. Pian"
-          ],
-          "reason": "Re-clearing of vegetation to improve access, and ensure safe, reliable operations."
-        },
-        {
-          "date": "2026-09-09",
-          "timeStart": "9:00 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8 hrs",
-          "municipality": "Dipolog",
-          "areas": [
-            "Brgy. Lugdungan"
-          ],
-          "reason": "Installation of conductor for new 3-phase distribution line ensures efficient and balanced power distribution, improves system capacity and reliability, and provides a stable supply of electricity to meet growing load demand."
-        },
-        {
-          "date": "2026-09-10",
-          "timeStart": "8:30 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8.5 hrs",
-          "municipality": "Polanco",
-          "areas": [
-            "Purok Sampaguita West, Pian"
-          ],
-          "reason": "Re-clearing of vegetation to improve access, and ensure safe, reliable operations."
-        },
-        {
-          "date": "2026-09-11",
-          "timeStart": "9:00 AM",
-          "timeEnd": "5:00 PM",
-          "duration": "8 hrs",
-          "municipality": "Dipolog",
-          "areas": [
-            "Brgy. Lugdungan"
-          ],
-          "reason": "Final clearing for new constructed three-phase distribution line ensures proper line clearance, prevents vegetation-related faults, improves safety, and promotes reliable, uninterrupted power distribution."
-        }
-      ]
-    },
     {
       "areaSystem": "LAS",
       "title": "Notice of Scheduled Power Interruption LAS – September 13, 15, 17, 18 & 20, 2026",
