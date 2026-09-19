@@ -1,31 +1,7 @@
 {
-  "lastCheckedAt": "2026-09-18T21:22:43Z",
+  "lastCheckedAt": "2026-09-19T00:29:45Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
-    {
-      "areaSystem": "PAS",
-      "title": "Notice of Scheduled Power Interruption PAS – September 16 & 18, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/11/notice-of-scheduled-power-interruption-pas-september-16-18-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-16",
-      "id": "pas-2026-09-16"
-    },
-    {
-      "areaSystem": "PAS",
-      "title": "Notice of Scheduled Power Interruption PAS – September 16 & 19, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/14/notice-of-scheduled-power-interruption-pas-september-16-19-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-16",
-      "id": "pas-2026-09-16-2"
-    },
-    {
-      "areaSystem": "LAS",
-      "title": "Notice of Scheduled Power Interruption LAS – September 16 & 20, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/15/notice-of-scheduled-power-interruption-las-september-16-20-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-16",
-      "id": "las-2026-09-16"
-    },
     {
       "areaSystem": "PAS",
       "title": "Notice of Scheduled Power Interruption PAS – September 17 & 20, 2026",
@@ -33,14 +9,6 @@
       "status": "pending_detail",
       "leadDate": "2026-09-17",
       "id": "pas-2026-09-17"
-    },
-    {
-      "areaSystem": "DAS",
-      "title": "Notice of Scheduled Power Interruption DAS – September 16 & 17, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/09/15/notice-of-scheduled-power-interruption-das-september-16-17-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-09-16",
-      "id": "das-2026-09-16"
     },
     {
       "areaSystem": "PAS",
