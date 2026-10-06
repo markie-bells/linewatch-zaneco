@@ -1,15 +1,7 @@
 {
-  "lastCheckedAt": "2026-10-05T21:59:58Z",
+  "lastCheckedAt": "2026-10-06T06:15:30Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
-    {
-      "areaSystem": "DAS",
-      "title": "Notice of Scheduled Power Interruption DAS – October 3, 2026.",
-      "sourceUrl": "https://zaneco.ph/2026/09/30/notice-of-scheduled-power-interruption-das-october-3-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-10-03",
-      "id": "das-2026-10-03"
-    },
     {
       "areaSystem": "PAS",
       "title": "Notice of Scheduled Power Interruption PAS – October 9, 2026.",
