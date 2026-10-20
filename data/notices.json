@@ -1,15 +1,7 @@
 {
-  "lastCheckedAt": "2026-10-19T20:34:08Z",
+  "lastCheckedAt": "2026-10-20T00:18:21Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
-    {
-      "areaSystem": "NGCP",
-      "title": "Notice of Scheduled Power Interruption NGCP – October 17, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/10/12/notice-of-scheduled-power-interruption-ngcp-october-17-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-10-17",
-      "id": "ngcp-2026-10-17"
-    },
     {
       "areaSystem": "SAS",
       "title": "Notice of Scheduled Power Interruption SAS – October 20, 21, 22, 23 & 24, 2026",
