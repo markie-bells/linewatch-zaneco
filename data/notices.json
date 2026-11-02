@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-11-01T19:37:47Z",
+  "lastCheckedAt": "2026-11-02T00:39:15Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -17,14 +17,6 @@
       "status": "pending_detail",
       "leadDate": "2026-10-31",
       "id": "das-2026-10-31"
-    },
-    {
-      "areaSystem": "LAS",
-      "title": "Notice of Emergency Schedule Power Interruption LAS – October 30, 2026",
-      "sourceUrl": "https://zaneco.ph/2026/10/29/notice-of-emergency-schedule-power-interruption-las-october-30-2026/",
-      "status": "pending_detail",
-      "leadDate": "2026-10-30",
-      "id": "las-2026-10-30"
     },
     {
       "areaSystem": "PAS",
