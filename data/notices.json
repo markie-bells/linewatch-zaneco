@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-11-11T21:54:34Z",
+  "lastCheckedAt": "2026-11-12T07:05:17Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -9,6 +9,14 @@
       "status": "pending_detail",
       "leadDate": "2026-11-12",
       "id": "pas-2026-11-12"
+    },
+    {
+      "areaSystem": "PAS",
+      "title": "Notice of Scheduled Power Interruption PAS – November 18 & 19, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/11/12/notice-of-scheduled-power-interruption-pas-november-18-19-2026/",
+      "status": "pending_detail",
+      "leadDate": "2026-11-18",
+      "id": "pas-2026-11-18"
     }
   ]
 }
