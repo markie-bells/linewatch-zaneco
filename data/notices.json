@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-11-16T00:58:53Z",
+  "lastCheckedAt": "2026-11-16T11:06:14Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -17,6 +17,14 @@
       "status": "pending_detail",
       "leadDate": "2026-11-17",
       "id": "das-2026-11-17"
+    },
+    {
+      "areaSystem": "NGCP",
+      "title": "Notice of NGCP Scheduled Power Interruption – November 21, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/11/16/notice-of-ngcp-scheduled-power-interruption-november-21-2026/",
+      "status": "pending_detail",
+      "leadDate": "2026-11-21",
+      "id": "ngcp-2026-11-21"
     }
   ]
 }
