@@ -1,5 +1,5 @@
 {
-  "lastCheckedAt": "2026-11-24T02:10:08Z",
+  "lastCheckedAt": "2026-11-24T13:35:30Z",
   "sourceUrl": "https://zaneco.ph/category/power-interruption-update/",
   "notices": [
     {
@@ -17,6 +17,22 @@
       "status": "pending_detail",
       "leadDate": "2026-11-25",
       "id": "pas-2026-11-25"
+    },
+    {
+      "areaSystem": "DAS",
+      "title": "Notice of Scheduled Power Interruption DAS – November 26, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/11/24/notice-of-scheduled-power-interruption-das-november-26-2026/",
+      "status": "pending_detail",
+      "leadDate": "2026-11-26",
+      "id": "das-2026-11-26"
+    },
+    {
+      "areaSystem": "LAS",
+      "title": "Notice of Scheduled Power Interruption LAS & PAS – November 27, 2026 & December 1, 2026",
+      "sourceUrl": "https://zaneco.ph/2026/11/24/notice-of-scheduled-power-interruption-las-pas-november-27-2026-december-1-2026/",
+      "status": "pending_detail",
+      "leadDate": "2026-11-27",
+      "id": "las-2026-11-27"
     }
   ]
 }
